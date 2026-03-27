@@ -22,11 +22,11 @@
 		
 	<StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
 		<Button Content="Назад" Margin="5" Click="Back_Click"  FontFamily="Times New Roman"></Button>
-		<Button Content="Добавить товар" Margin="5" IsVisible="False" Click="Add_Click"  FontFamily="Times New Roman"></Button>
+		<Button Content="Добавить товар" Margin="5" Name="AddButton" IsVisible="False" Click="AddButton_Click"  FontFamily="Times New Roman"></Button>
 	</StackPanel>
 
 
-	<ListBox Name="TovarsBox" SelectionChanged="TovarsBox_SelectionChanged" Background="#02f21e">
+	<ListBox Name="TovarsBox" SelectionChanged="TovarsBox_SelectionChanged">
 			<ListBox.ItemsPanel>
 				<ItemsPanelTemplate>
 					<UniformGrid Columns="1"></UniformGrid>

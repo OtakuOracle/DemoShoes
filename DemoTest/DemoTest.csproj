@@ -35,6 +35,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AddEditTovar.axaml.cs">
+      <DependentUpon>AddEditTovar.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="images\1.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

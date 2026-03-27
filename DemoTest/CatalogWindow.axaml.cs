@@ -4,6 +4,7 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using DemoTest.Models;
 using Microsoft.EntityFrameworkCore;
+using MsBox.Avalonia;
 
 namespace DemoTest;
 
@@ -36,7 +37,7 @@ public partial class CatalogWindow : Window
     {
         switch (roleId)
         {
-            case 1: SearchBox.IsVisible = true; Sort.IsVisible = true; Filter.IsVisible = true; break;
+            case 1: SearchBox.IsVisible = true; Sort.IsVisible = true; Filter.IsVisible = true; AddButton.IsVisible = true; break;
             case 2: SearchBox.IsVisible = true; Sort.IsVisible = true; Filter.IsVisible = true; break;
         }
     }
@@ -45,7 +46,6 @@ public partial class CatalogWindow : Window
     {
         using var context = new TrenirovkaContext();
 
-        // Включаем TovarType, Category и Manufacturer при загрузке
         var allProducts = context.Tovars
                                 .Include(x => x.Category)
                                 .Include(x => x.Manufacturer)
@@ -127,16 +127,34 @@ public partial class CatalogWindow : Window
 
 
     }
-    private void Add_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    private void AddButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var add = new AddEditTovar();
-        add.Show();
-        this.Close();
+        // Предполагается, что у вас есть переменная User localUser; в этом окне
+      
+            var add = new AddEditTovar(); // Передаем текущего пользователя
+            add.Show();
+            this.Close(); // Закрываем текущее окно (CatalogWindow)
+
+
     }
+
 
     private void TovarsBox_SelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
-        var tovar = TovarsBox.SelectedItem as Tovar;
+        if (TovarsBox.SelectedItem is Tovar tovar)
+        {
+            if (localUser != null) // Проверяем, что пользователь существует
+            {
+                var addedit = new AddEditTovar(localUser, tovar); // Передаем пользователя и выбранный товар
+                addedit.Show();
+                this.Close(); // Закрываем текущее окно (CatalogWindow)
+            }
+            else
+            {
+                var error = MessageBoxManager.GetMessageBoxStandard("Ошибка", "Пожалуйста, войдите в систему, чтобы редактировать товар.", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Error);
+                error.ShowAsync();
+            }
+        }
     }
 
     private void Back_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
