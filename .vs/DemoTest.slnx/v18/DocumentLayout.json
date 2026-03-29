@@ -7,32 +7,94 @@
       "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\addedittovar.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\catalogwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\catalogwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\app.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\app.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|c:\\users\\admin\\desktop\\demoshoes\\api_test\\controllers\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|solutionrelative:api_test\\controllers\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|c:\\users\\admin\\desktop\\demoshoes\\api_test\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|solutionrelative:api_test\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|c:\\users\\admin\\desktop\\demoshoes\\api_test\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|solutionrelative:api_test\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|c:\\users\\admin\\desktop\\demoshoes\\api_test\\api_test.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|solutionrelative:api_test\\api_test.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|c:\\users\\admin\\desktop\\demoshoes\\api_test\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|solutionrelative:api_test\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|c:\\users\\admin\\desktop\\demoshoes\\api_test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|solutionrelative:api_test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|c:\\users\\admin\\desktop\\demoshoes\\api_test\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|solutionrelative:api_test\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\models\\trenirovkacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\models\\trenirovkacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|c:\\users\\admin\\desktop\\demoshoes\\api_test\\api_test.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{8FD0A7DB-C0D8-427D-9A02-905BFC4416F5}|api_test\\api_test.csproj|solutionrelative:api_test\\api_test.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\catalogwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\catalogwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\orderwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\orderwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\catalogwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\catalogwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\addedittovar.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\addedittovar.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\AddEditOrdersWindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\OrdersWindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\ProductsWindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\AddEditProductWindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\ProductToOrder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\orderwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\orderwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 129,
+      "VerticalTabListWidth": 205,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Bookmark",
@@ -48,67 +110,211 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductsWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\ProductsWindow.axaml.cs",
-              "RelativeDocumentMoniker": "..\\Demo2026\\demka200326\\ProductsWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\ProductsWindow.axaml.cs",
-              "RelativeToolTip": "..\\Demo2026\\demka200326\\ProductsWindow.axaml.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAG4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T08:03:26.052Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddEditTovar.axaml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\AddEditTovar.axaml",
-              "RelativeDocumentMoniker": "DemoTest\\AddEditTovar.axaml",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\AddEditTovar.axaml",
-              "RelativeToolTip": "DemoTest\\AddEditTovar.axaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-26T07:58:14.766Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CatalogWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\CatalogWindow.axaml.cs",
-              "RelativeDocumentMoniker": "DemoTest\\CatalogWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\CatalogWindow.axaml.cs",
-              "RelativeToolTip": "DemoTest\\CatalogWindow.axaml.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwC4AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T07:49:49.58Z",
+              "Title": "App.axaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\App.axaml",
+              "RelativeDocumentMoniker": "DemoTest\\App.axaml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\App.axaml",
+              "RelativeToolTip": "DemoTest\\App.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-29T16:11:40.396Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CatalogWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\CatalogWindow.axaml",
-              "RelativeDocumentMoniker": "DemoTest\\CatalogWindow.axaml",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\CatalogWindow.axaml",
-              "RelativeToolTip": "DemoTest\\CatalogWindow.axaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-26T07:49:48.628Z",
+              "Title": "App.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\App.axaml.cs",
+              "RelativeDocumentMoniker": "DemoTest\\App.axaml.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\App.axaml.cs",
+              "RelativeToolTip": "DemoTest\\App.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T16:11:31.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "api_test\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "api_test\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T15:52:12.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PasswordController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\Controllers\\PasswordController.cs",
+              "RelativeDocumentMoniker": "api_test\\Controllers\\PasswordController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\Controllers\\PasswordController.cs",
+              "RelativeToolTip": "api_test\\Controllers\\PasswordController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T15:51:07.822Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AddEditProductWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\AddEditProductWindow.axaml.cs",
-              "RelativeDocumentMoniker": "..\\Demo2026\\demka200326\\AddEditProductWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\AddEditProductWindow.axaml.cs",
-              "RelativeToolTip": "..\\Demo2026\\demka200326\\AddEditProductWindow.axaml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACEAAAAFAAAAAAAAAA==",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "api_test\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\Controllers\\UserController.cs",
+              "RelativeToolTip": "api_test\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T07:45:55.798Z"
+              "WhenOpened": "2026-03-29T15:46:41.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "api_test",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\api_test.csproj",
+              "RelativeDocumentMoniker": "api_test\\api_test.csproj",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\api_test.csproj",
+              "RelativeToolTip": "api_test\\api_test.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-29T15:36:42.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\Program.cs",
+              "RelativeDocumentMoniker": "api_test\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\Program.cs",
+              "RelativeToolTip": "api_test\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA+wBgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T12:31:46.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TrenirovkaContext.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\Models\\TrenirovkaContext.cs",
+              "RelativeDocumentMoniker": "DemoTest\\Models\\TrenirovkaContext.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\Models\\TrenirovkaContext.cs",
+              "RelativeToolTip": "DemoTest\\Models\\TrenirovkaContext.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAUwCsAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T12:30:15.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\appsettings.json",
+              "RelativeDocumentMoniker": "api_test\\appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\appsettings.json",
+              "RelativeToolTip": "api_test\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-29T12:29:34.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "api_test\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\Properties\\launchSettings.json",
+              "RelativeToolTip": "api_test\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-29T12:26:45.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "api_test.http",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\api_test.http",
+              "RelativeDocumentMoniker": "api_test\\api_test.http",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\api_test\\api_test.http",
+              "RelativeToolTip": "api_test\\api_test.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-03-29T12:25:40.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AddEditTovar.axaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\AddEditTovar.axaml",
+              "RelativeDocumentMoniker": "DemoTest\\AddEditTovar.axaml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\AddEditTovar.axaml",
+              "RelativeToolTip": "DemoTest\\AddEditTovar.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-28T19:38:38.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddEditOrdersWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\AddEditOrdersWindow.axaml.cs",
+              "RelativeDocumentMoniker": "..\\Demo2026\\demka200326\\AddEditOrdersWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\AddEditOrdersWindow.axaml.cs",
+              "RelativeToolTip": "..\\Demo2026\\demka200326\\AddEditOrdersWindow.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T15:14:56.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OrdersWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\OrdersWindow.axaml.cs",
+              "RelativeDocumentMoniker": "..\\Demo2026\\demka200326\\OrdersWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\OrdersWindow.axaml.cs",
+              "RelativeToolTip": "..\\Demo2026\\demka200326\\OrdersWindow.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T15:14:17.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProductsWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\ProductsWindow.axaml.cs",
+              "RelativeDocumentMoniker": "..\\Demo2026\\demka200326\\ProductsWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\ProductsWindow.axaml.cs",
+              "RelativeToolTip": "..\\Demo2026\\demka200326\\ProductsWindow.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T15:13:30.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProductToOrder.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\ProductToOrder.cs",
+              "RelativeDocumentMoniker": "..\\Demo2026\\demka200326\\ProductToOrder.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Demo2026\\demka200326\\ProductToOrder.cs",
+              "RelativeToolTip": "..\\Demo2026\\demka200326\\ProductToOrder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T15:13:12.926Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -118,9 +324,74 @@
               "RelativeDocumentMoniker": "DemoTest\\AddEditTovar.axaml.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\AddEditTovar.axaml.cs",
               "RelativeToolTip": "DemoTest\\AddEditTovar.axaml.cs",
-              "ViewState": "AgIAAPIAAAAAAAAAAAAmwKEAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAowIEAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T07:23:25.355Z",
+              "WhenOpened": "2026-03-27T14:42:36.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CatalogWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\CatalogWindow.axaml",
+              "RelativeDocumentMoniker": "DemoTest\\CatalogWindow.axaml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\CatalogWindow.axaml",
+              "RelativeToolTip": "DemoTest\\CatalogWindow.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-27T14:40:13.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrderWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\OrderWindow.axaml.cs",
+              "RelativeDocumentMoniker": "DemoTest\\OrderWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\OrderWindow.axaml.cs",
+              "RelativeToolTip": "DemoTest\\OrderWindow.axaml.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T14:25:59.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CatalogWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\CatalogWindow.axaml.cs",
+              "RelativeDocumentMoniker": "DemoTest\\CatalogWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\CatalogWindow.axaml.cs",
+              "RelativeToolTip": "DemoTest\\CatalogWindow.axaml.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T14:25:16.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "OrderWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\OrderWindow.axaml",
+              "RelativeDocumentMoniker": "DemoTest\\OrderWindow.axaml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\OrderWindow.axaml",
+              "RelativeToolTip": "DemoTest\\OrderWindow.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-27T14:21:00.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "DemoTest\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\Models\\Order.cs",
+              "RelativeToolTip": "DemoTest\\Models\\Order.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBkAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T14:21:13.432Z",
               "EditorCaption": ""
             }
           ]

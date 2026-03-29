@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		x:CompileBindings="False"
+        x:Class="DemoTest.OrderWindow"
+        Title="Добавление заказа">
+
+	<DockPanel>
+
+		<StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
+			<Button Content="Назад" Margin="5" Click="Back_Click"  FontFamily="Times New Roman"></Button>
+		</StackPanel>
+		
+		<ListBox Name="OrdersBox">
+			<ListBox.ItemsPanel>
+				<ItemsPanelTemplate>
+					<UniformGrid Columns="1"></UniformGrid>
+				</ItemsPanelTemplate>
+			</ListBox.ItemsPanel>
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border BorderBrush="Black" BorderThickness="1">
+						<DockPanel>
+							<Border BorderBrush="Black" BorderThickness="1" Margin="5" DockPanel.Dock="Right">
+								<StackPanel  Orientation="Vertical" VerticalAlignment="Center">
+									<TextBlock Text="{Binding DateDelivery}" FontFamily="Times New Roman"></TextBlock>
+								</StackPanel>
+							</Border>
+
+							<Border BorderBrush="Black" BorderThickness="1" Margin="5">
+								<StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
+									<TextBlock Text="{Binding ProductInOrders.TovarArt,StringFormat='Артикул:{0}'}"  FontFamily="Times New Roman" Margin="5"/>
+									<TextBlock Text="{Binding OrderStatusNavigation.OrderStatusName,StringFormat='Статус:{0}'}"  FontFamily="Times New Roman" Margin="5"/>
+									<TextBlock Text="{Binding PickUpPoint.PickUpPointName,StringFormat='Пункт:{0}'}"  FontFamily="Times New Roman" Margin="5"/>
+									<TextBlock Text="{Binding DateCreate, StringFormat='Дата заказа:{0}'}"  FontFamily="Times New Roman" Margin="5"/>
+
+								</StackPanel>
+							</Border>
+						</DockPanel>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+
+		</DockPanel>
+
+</Window>

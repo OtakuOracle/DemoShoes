@@ -8,7 +8,7 @@
         Title="Добавление и редактирование товара">
 
 	<StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-		 <Button Content="Изменить" Margin="5" Click="Edit_Click" IsVisible="False" Name="EditBut"></Button> <!-- Перенесена сюда -->
+		 <Button Content="Изменить" Margin="5" Click="Edit_Click" IsVisible="False" Name="EditBut"></Button> 
 		<TextBox Margin="5" Watermark="Введите Описание" Width="200" Text="{Binding Description}"></TextBox>
 		<TextBox Margin="5" Watermark="Введите Цену" Width="200" Text="{Binding Price}"></TextBox>
 		<TextBox Margin="5" Watermark="Введите Скидку" Width="200" Text="{Binding Discount}"></TextBox>
