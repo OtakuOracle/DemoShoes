@@ -78,15 +78,11 @@ public partial class CatalogWindow : Window
         {
             var searchTerm = SearchBox.Text.ToLower();
             allProducts = allProducts.Where(x =>
-                // поиск по типу товара
                 (x.TovarType != null && !string.IsNullOrWhiteSpace(x.TovarType.TovarTypeName) && x.TovarType.TovarTypeName.ToLower().Contains(searchTerm)) ||
-                // поиск по категории
                 (x.Category != null && !string.IsNullOrWhiteSpace(x.Category.CategoryName) && x.Category.CategoryName.ToLower().Contains(searchTerm)) ||
-                // поиск по наименовании производителя
                 (x.Manufacturer != null && !string.IsNullOrWhiteSpace(x.Manufacturer.ManufacturerName) && x.Manufacturer.ManufacturerName.ToLower().Contains(searchTerm)) ||
 
                 (x.Supplier != null && !string.IsNullOrWhiteSpace(x.Supplier.SupplierName) && x.Supplier.SupplierName.ToLower().Contains(searchTerm)) ||
-                //поиск по описанию
                 (x.Description != null && !string.IsNullOrWhiteSpace(x.Description) && x.Description.ToLower().Contains(searchTerm))
 
             ).ToList();
@@ -129,11 +125,10 @@ public partial class CatalogWindow : Window
     }
     private void AddButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        // Предполагается, что у вас есть переменная User localUser; в этом окне
       
-            var add = new AddEditTovar(); // Передаем текущего пользователя
+            var add = new AddEditTovar(); 
             add.Show();
-            this.Close(); // Закрываем текущее окно (CatalogWindow)
+            this.Close(); 
 
 
     }
@@ -153,11 +148,11 @@ public partial class CatalogWindow : Window
     {
         if (TovarsBox.SelectedItem is Tovar tovar)
         {
-            if (localUser != null) // Проверяем, что пользователь существует
+            if (localUser != null)
             {
-                var addedit = new AddEditTovar(localUser, tovar); // Передаем пользователя и выбранный товар
+                var addedit = new AddEditTovar(localUser, tovar); 
                 addedit.Show();
-                this.Close(); // Закрываем текущее окно (CatalogWindow)
+                this.Close(); 
             }
             else
             {

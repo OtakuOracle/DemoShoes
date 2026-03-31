@@ -5,12 +5,13 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 		x:CompileBindings="False"
         x:Class="DemoTest.OrderWindow"
-        Title="Добавление заказа">
+        Title="Заказы">
 
 	<DockPanel>
 
 		<StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
 			<Button Content="Назад" Margin="5" Click="Back_Click"  FontFamily="Times New Roman"></Button>
+
 		</StackPanel>
 		
 		<ListBox Name="OrdersBox">
@@ -28,10 +29,16 @@
 									<TextBlock Text="{Binding DateDelivery}" FontFamily="Times New Roman"></TextBlock>
 								</StackPanel>
 							</Border>
-
 							<Border BorderBrush="Black" BorderThickness="1" Margin="5">
 								<StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
-									<TextBlock Text="{Binding ProductInOrders.TovarArt,StringFormat='Артикул:{0}'}"  FontFamily="Times New Roman" Margin="5"/>
+									<ItemsControl ItemsSource="{Binding ProductInOrders}">
+										<ItemsControl.ItemTemplate>
+											<DataTemplate>
+												<TextBlock Text="{Binding TovarArt, StringFormat='Артикул: {0}'}"
+														   FontFamily="Times New Roman" Margin="5"/>
+											</DataTemplate>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
 									<TextBlock Text="{Binding OrderStatusNavigation.OrderStatusName,StringFormat='Статус:{0}'}"  FontFamily="Times New Roman" Margin="5"/>
 									<TextBlock Text="{Binding PickUpPoint.PickUpPointName,StringFormat='Пункт:{0}'}"  FontFamily="Times New Roman" Margin="5"/>
 									<TextBlock Text="{Binding DateCreate, StringFormat='Дата заказа:{0}'}"  FontFamily="Times New Roman" Margin="5"/>

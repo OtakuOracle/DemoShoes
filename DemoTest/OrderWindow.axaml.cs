@@ -4,32 +4,36 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using DemoTest.Models;
 using Microsoft.EntityFrameworkCore;
+using MsBox.Avalonia;
 
 namespace DemoTest;
 
 public partial class OrderWindow : Window
 {
-    User localUser; // Теперь этот localUser будет инициализирован
+    User localUser;  
 
-    // Пустой конструктор, если он вам абсолютно необходим, но лучше его избегать
-    // или сделать так, чтобы он тоже получал пользователя каким-то образом.
     public OrderWindow()
     {
-        // Если пустой конструктор вызывается, нужно как-то получить пользователя.
-        // Например, загрузить его из какого-то глобального хранилища или файла.
-        // Если это невозможно, вызывайте краш или показывайте ошибку.
-        // throw new InvalidOperationException("OrderWindow must be created with a User object.");
         InitializeComponent();
         Get();
-        // Возможно, здесь тоже нужно что-то сделать с localUser, если он не null.
     }
 
-    // Этот конструктор должен использоваться для создания OrderWindow
     public OrderWindow(User user)
     {
-        InitializeComponent(); // Важно вызвать InitializeComponent()
-        localUser = user;
-        Get(); 
+        InitializeComponent();
+        using var context = new TrenirovkaContext();
+        Visibility(user.RoleId);
+        Get();
+    }
+
+    public void Visibility(int roleId)
+    {
+        switch (roleId)
+        {
+            case 1: AddButton.IsVisible = true; break;
+            case 2: AddButton.IsVisible = false; break;
+            default: AddButton.IsVisible = false; break;
+        }
     }
 
     private void Get()
@@ -47,10 +51,10 @@ public partial class OrderWindow : Window
 
     private void Back_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-
-            var catalog = new CatalogWindow(localUser);
+        
+            var catalog = new CatalogWindow(); 
             catalog.Show();
-            this.Close();
-      
+         this.Close();
     }
+
 }

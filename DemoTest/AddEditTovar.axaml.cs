@@ -16,7 +16,6 @@ public partial class AddEditTovar : Window
     User localUser;
     private Tovar _tovar;
     private string ImageName;
-    //private string TovarArt;
     private string _currentPhotoPath;
 
 
@@ -72,7 +71,14 @@ public partial class AddEditTovar : Window
         this.Close();
     }
 
-
+    /// <summary>
+    /// Проверяет корректность данных товара перед сохранением или обновлением.
+    /// Валидирует цену и количество на отрицательные значения.
+    /// /// </summary>
+    /// <param name="t">Объект товара для валидации. /// </param>
+    /// <returns>
+    /// true, если данные товара корректны, иначе false. /// </returns>
+    /// 
     private bool ValidateProduct(Tovar t)
     {
         if (t.Price.HasValue && t.Price < 0)
@@ -101,6 +107,15 @@ public partial class AddEditTovar : Window
     }
 
 
+
+    /// <summary>
+    /// Обработчик события нажатия кнопки "Добавить".
+    /// Пытается добавить новый товар в базу данных.
+    /// Выполняет валидацию данных, получение ID связанных сущностей
+    /// и сохранение нового товара. В случае ошибки выводит соответствующее сообщение.
+    /// </summary>
+    /// <param name="sender">Объект, вызвавший событие.</param>
+    /// <param name="e">Аргументы события.</param>
     private async void Add_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         try
@@ -127,7 +142,7 @@ public partial class AddEditTovar : Window
                 var unitFin = context.Units.Where(x => x.UnitName == unit).Select(x => x.UnitId).FirstOrDefault();
                 var tovartypeFin = context.TovarTypes.Where(x => x.TovarTypeName == tovartype).Select(x => x.TovarTypeId).FirstOrDefault();
 
-                newTovar.TovarArt = DateTime.Now.ToString();
+                newTovar.TovarArt = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 6).Select(s => s[new Random().Next(s.Length)]).ToArray());
                 newTovar.SupplierId = proFin;
                 newTovar.ManufacturerId = manFin;
                 newTovar.CategoryId = catFin;
@@ -194,6 +209,14 @@ public partial class AddEditTovar : Window
     }
 
 
+    /// <summary>
+    /// Обработчик события нажатия кнопки "Добавить изображение".
+    /// Открывает диалог выбора файла, позволяет пользователю выбрать изображение,
+    /// загружает его в элемент управления ImageBox и сохраняет копию изображения
+    /// в папку "images" с уникальным именем.
+    /// </summary>
+    /// <param name="sender">Объект, вызвавший событие.</param>
+    /// <param name="e">Аргументы события.</param>
     private async void AddImage_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         var topLevel = TopLevel.GetTopLevel(this);
@@ -218,6 +241,14 @@ public partial class AddEditTovar : Window
     }
 
 
+    /// <summary>
+    /// Обработчик события нажатия кнопки "Удалить".
+    /// Находит товар по его уникальному артикулу (TovarArt) в базе данных,
+    /// удаляет его, отображает сообщение об успехе и перенаправляет пользователя
+    /// в окно каталога.
+    /// </summary>
+    /// <param name="sender">Объект, вызвавший событие.</param>
+    /// <param name="e">Аргументы события.</param>
     private async void Delete_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         using var context = new TrenirovkaContext();
@@ -240,6 +271,16 @@ public partial class AddEditTovar : Window
         this.Close();
     }
 
+
+    /// <summary>
+    /// Обработчик события нажатия кнопки "Редактировать".
+    /// Обновляет данные существующего товара в базе данных на основе
+    /// данных из полей ввода и выбранных элементов в выпадающих списках.
+    /// Также обрабатывает обновление фото товара.
+    /// После успешного сохранения перенаправляет пользователя в окно каталога.
+    /// </summary>
+    /// <param name="sender">Объект, вызвавший событие.</param>
+    /// <param name="e">Аргументы события.</param>
     private async void Edit_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         using var context = new TrenirovkaContext();
@@ -266,7 +307,7 @@ public partial class AddEditTovar : Window
 
             if (!string.IsNullOrEmpty(ImageName))
             {
-                _tovar.Photo = "images/" + ImageName; // Обновляем путь, если выбрана новая картинка
+                _tovar.Photo = "images/" + ImageName; 
             }
             else if (!string.IsNullOrEmpty(_currentPhotoPath))
             {
