@@ -5,7 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 		x:CompileBindings="False"
         x:Class="DemoTest.CatalogWindow"
-        Title="Список товаров">
+        Title="Список товаров"
+		Icon="Icon/icon.png">
 	
 	<DockPanel>
 

@@ -20,6 +20,7 @@ public partial class CatalogWindow : Window
         using var context = new TrenirovkaContext();
         LoadBox();
 
+
     }
 
     public CatalogWindow(User user)
