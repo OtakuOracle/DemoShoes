@@ -22,19 +22,11 @@ public partial class OrderWindow : Window
     {
         InitializeComponent();
         using var context = new TrenirovkaContext();
-        Visibility(user.RoleId);
+        //Visibility(user.RoleId);
         Get();
     }
 
-    public void Visibility(int roleId)
-    {
-        switch (roleId)
-        {
-            case 1: AddButton.IsVisible = true; break;
-            case 2: AddButton.IsVisible = false; break;
-            default: AddButton.IsVisible = false; break;
-        }
-    }
+
 
     private void Get()
     {

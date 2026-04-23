@@ -32,6 +32,7 @@ public partial class MainWindow : Window
                 if (user.RoleId == 1)
                 {
                     Class1.isAdmin = true;
+                    Class1._user = user;
                 }
 
                 CatalogWindow productsWindw = new CatalogWindow(user);

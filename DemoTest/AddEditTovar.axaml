@@ -8,7 +8,9 @@
         Title="Добавление и редактирование товара">
 
 	<StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-		 <Button Content="Изменить" Margin="5" Click="Edit_Click" IsVisible="False" Name="EditBut"></Button> 
+		 <Button Content="Изменить" Margin="5" Click="Edit_Click" IsVisible="False" Name="EditBut"></Button>
+		<TextBox x:Name="TovarArtTextBox" Margin="5" Width="200"
+         Text="{Binding TovarArt}" IsReadOnly="True"></TextBox>
 		<TextBox Margin="5" Watermark="Введите Описание" Width="200" Text="{Binding Description}"></TextBox>
 		<TextBox Margin="5" Watermark="Введите Цену" Width="200" Text="{Binding Price}"></TextBox>
 		<TextBox Margin="5" Watermark="Введите Скидку" Width="200" Text="{Binding Discount}"></TextBox>
@@ -19,9 +21,9 @@
 		<ComboBox Name="Category" Width="200" Margin="5" PlaceholderText="Выберите категорию" />
 		<ComboBox Name="Unit" Width="200" Margin="5" PlaceholderText="Ед. измерения" />
 		<Image Source="{Binding Photo}" Height="100" Width="100" Margin="5" Name="ImageBox"></Image>
-		<Button Content="Назад" Margin="5" Click="Back_Click"></Button>
-		<Button Content="Создать" Margin="5" Click="Add_Click"></Button>
+		<Button Content="Добавить" Margin="5" Click="Add_Click" IsVisible="False" Name="AddBut"></Button>
 		<Button Content="Добавить картинку" Margin="5" Click="AddImage_Click"></Button>
 		<Button Content="Удалить" Margin="5" Click="Delete_Click" IsVisible="False" Name="DeleteBut"></Button>
+		<Button Content="Назад" Margin="5" Click="Back_Click"></Button>
 	</StackPanel>
 </Window>

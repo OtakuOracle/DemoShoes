@@ -19,7 +19,7 @@ public partial class AddEditTovar : Window
     private string _currentPhotoPath;
 
 
-    public AddEditTovar()
+    public AddEditTovar() //add
     {
         InitializeComponent();
         LoadManu();
@@ -28,6 +28,10 @@ public partial class AddEditTovar : Window
         LoadUnit(); 
         LoadTovarType();
         DataContext = new Tovar();
+        TovarArtTextBox.IsVisible = false;
+        EditBut.IsVisible = false;
+        DeleteBut.IsVisible = false;
+        AddBut.IsVisible = true;
     }
 
 
@@ -36,7 +40,7 @@ public partial class AddEditTovar : Window
         localUser = user; 
     }
 
-    public AddEditTovar(User user, Tovar tovar)
+    public AddEditTovar(User user, Tovar tovar) //edit
     {
         InitializeComponent();
         using var context = new TrenirovkaContext();
@@ -48,8 +52,10 @@ public partial class AddEditTovar : Window
         LoadUnit(); 
         LoadTovarType();
         DataContext = _tovar;
+        TovarArtTextBox.IsVisible = true;
         EditBut.IsVisible = true;
         DeleteBut.IsVisible = true;
+        AddBut.IsVisible = false;
         ImageBox.Source = _tovar.GetPhoto;
         var a = _tovar.ManufacturerId;
         var b = _tovar.CategoryId;
@@ -70,15 +76,6 @@ public partial class AddEditTovar : Window
         catalog.Show();
         this.Close();
     }
-
-    /// <summary>
-    /// Проверяет корректность данных товара перед сохранением или обновлением.
-    /// Валидирует цену и количество на отрицательные значения.
-    /// /// </summary>
-    /// <param name="t">Объект товара для валидации. /// </param>
-    /// <returns>
-    /// true, если данные товара корректны, иначе false. /// </returns>
-    /// 
     private bool ValidateProduct(Tovar t)
     {
         if (t.Price.HasValue && t.Price < 0)
@@ -105,17 +102,6 @@ public partial class AddEditTovar : Window
 
         return true;
     }
-
-
-
-    /// <summary>
-    /// Обработчик события нажатия кнопки "Добавить".
-    /// Пытается добавить новый товар в базу данных.
-    /// Выполняет валидацию данных, получение ID связанных сущностей
-    /// и сохранение нового товара. В случае ошибки выводит соответствующее сообщение.
-    /// </summary>
-    /// <param name="sender">Объект, вызвавший событие.</param>
-    /// <param name="e">Аргументы события.</param>
     private async void Add_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         try
@@ -156,9 +142,18 @@ public partial class AddEditTovar : Window
                 var message = MessageBoxManager.GetMessageBoxStandard("Успех", "Товар создан", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Success);
                 await message.ShowAsync();
 
-                var catalog = new CatalogWindow();
-                catalog.Show();
-                this.Close();
+                if (Class1.isAdmin == true)
+                {
+                    var catalogWindow = new CatalogWindow(Class1._user);
+                    catalogWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+                    var catalogWindow = new CatalogWindow();
+                    catalogWindow.Show();
+                    this.Close();
+                }
             }
             else
             {
@@ -173,6 +168,52 @@ public partial class AddEditTovar : Window
             error.ShowAsync();
         }
     }
+
+    private async void AddImage_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        var topLevel = TopLevel.GetTopLevel(this);
+
+        var file = await topLevel.StorageProvider.SaveFilePickerAsync(new Avalonia.Platform.Storage.FilePickerSaveOptions
+        {
+            Title = "Добавить изображение",
+            FileTypeChoices = new[]
+            {
+            FilePickerFileTypes.All
+        }
+        });
+
+        if (file != null)
+        {
+            ImageBox.Source = new Bitmap(file.Path.LocalPath);
+            ImageName = Guid.NewGuid().ToString() + ".png";
+            var targetPath = AppDomain.CurrentDomain.BaseDirectory + "/images/" + ImageName;
+            File.Copy(file.Path.LocalPath, targetPath);
+
+        }
+    }
+
+    private async void Delete_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        using var context = new TrenirovkaContext();
+
+        var tovarId = _tovar.TovarArt;
+
+        var tovarToDelete = context.Tovars.Where(x => x.TovarArt == tovarId).FirstOrDefault();
+
+        if (tovarToDelete != null)
+        {
+            context.Remove(tovarToDelete);
+            context.SaveChanges();
+        }
+
+        var nice = MessageBoxManager.GetMessageBoxStandard("Успех", "Товар удален", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Success);
+        await nice.ShowAsync();
+
+        var catalog = new CatalogWindow();
+        catalog.Show();
+        this.Close();
+    }
+
 
     private void LoadManu()
     {
@@ -209,78 +250,6 @@ public partial class AddEditTovar : Window
     }
 
 
-    /// <summary>
-    /// Обработчик события нажатия кнопки "Добавить изображение".
-    /// Открывает диалог выбора файла, позволяет пользователю выбрать изображение,
-    /// загружает его в элемент управления ImageBox и сохраняет копию изображения
-    /// в папку "images" с уникальным именем.
-    /// </summary>
-    /// <param name="sender">Объект, вызвавший событие.</param>
-    /// <param name="e">Аргументы события.</param>
-    private async void AddImage_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
-        var topLevel = TopLevel.GetTopLevel(this);
-
-        var file = await topLevel.StorageProvider.SaveFilePickerAsync(new Avalonia.Platform.Storage.FilePickerSaveOptions
-        {
-            Title = "Добавить изображение",
-            FileTypeChoices = new[]
-            {
-                FilePickerFileTypes.All
-            }
-        });
-
-        if (file != null)
-        {
-            ImageBox.Source = new Bitmap(file.Path.LocalPath);
-            ImageName = Guid.NewGuid().ToString() + ".png";
-            var targetPath = AppDomain.CurrentDomain.BaseDirectory + "/images/" + ImageName;
-            File.Copy(file.Path.LocalPath, targetPath);
-
-        }
-    }
-
-
-    /// <summary>
-    /// Обработчик события нажатия кнопки "Удалить".
-    /// Находит товар по его уникальному артикулу (TovarArt) в базе данных,
-    /// удаляет его, отображает сообщение об успехе и перенаправляет пользователя
-    /// в окно каталога.
-    /// </summary>
-    /// <param name="sender">Объект, вызвавший событие.</param>
-    /// <param name="e">Аргументы события.</param>
-    private async void Delete_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
-        using var context = new TrenirovkaContext();
-
-        var tovarId = _tovar.TovarArt;
-
-        var tovarToDelete = context.Tovars.Where(x => x.TovarArt == tovarId).FirstOrDefault();
-
-        if (tovarToDelete != null)
-        {
-            context.Remove(tovarToDelete);
-            context.SaveChanges();
-        }
-
-        var nice = MessageBoxManager.GetMessageBoxStandard("Успех", "Товар удален", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Success);
-        await nice.ShowAsync();
-
-        var catalog = new CatalogWindow();
-        catalog.Show();
-        this.Close();
-    }
-
-
-    /// <summary>
-    /// Обработчик события нажатия кнопки "Редактировать".
-    /// Обновляет данные существующего товара в базе данных на основе
-    /// данных из полей ввода и выбранных элементов в выпадающих списках.
-    /// Также обрабатывает обновление фото товара.
-    /// После успешного сохранения перенаправляет пользователя в окно каталога.
-    /// </summary>
-    /// <param name="sender">Объект, вызвавший событие.</param>
-    /// <param name="e">Аргументы события.</param>
     private async void Edit_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         using var context = new TrenirovkaContext();
@@ -326,9 +295,18 @@ public partial class AddEditTovar : Window
             var nice = MessageBoxManager.GetMessageBoxStandard("Успех", "Товар изменен", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Success);
             await nice.ShowAsync();
 
-            var catalog = new CatalogWindow();
-            catalog.Show();
-            this.Close();
+            if (Class1.isAdmin == true)
+            {
+                var catalogWindow = new CatalogWindow(Class1._user);
+                catalogWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                var catalogWindow = new CatalogWindow();
+                catalogWindow.Show();
+                this.Close();
+            }
 
         }
         catch (Exception ex)
