@@ -69,24 +69,19 @@ public partial class CatalogWindow : Window
                 break;
         }
 
-        if (Filter.SelectedItem != null && Filter.SelectedItem.ToString() != "Все поставщики")
+        if (Filter.SelectedItem != null && Filter.SelectedIndex != 0)
         {
             allProducts = allProducts.Where(x => x.Supplier.SupplierName == Filter.SelectedItem.ToString()).ToList();
         }
 
 
-        if (SearchBox != null && !string.IsNullOrWhiteSpace(SearchBox.Text))
+        if (SearchBox.Text != null )
         {
-            var searchTerm = SearchBox.Text.ToLower();
-            allProducts = allProducts.Where(x =>
-                (x.TovarType != null && !string.IsNullOrWhiteSpace(x.TovarType.TovarTypeName) && x.TovarType.TovarTypeName.ToLower().Contains(searchTerm)) ||
-                (x.Category != null && !string.IsNullOrWhiteSpace(x.Category.CategoryName) && x.Category.CategoryName.ToLower().Contains(searchTerm)) ||
-                (x.Manufacturer != null && !string.IsNullOrWhiteSpace(x.Manufacturer.ManufacturerName) && x.Manufacturer.ManufacturerName.ToLower().Contains(searchTerm)) ||
-
-                (x.Supplier != null && !string.IsNullOrWhiteSpace(x.Supplier.SupplierName) && x.Supplier.SupplierName.ToLower().Contains(searchTerm)) ||
-                (x.Description != null && !string.IsNullOrWhiteSpace(x.Description) && x.Description.ToLower().Contains(searchTerm))
-
-            ).ToList();
+            allProducts = allProducts.Where(x => x.Description.ToLower().Contains(SearchBox.Text.ToLower()) ||
+                (x.Category.CategoryName.ToLower().Contains(SearchBox.Text.ToLower())) ||
+                (x.Manufacturer.ManufacturerName.ToLower().Contains(SearchBox.Text.ToLower())) ||
+                (x.Supplier.SupplierName.ToLower().Contains(SearchBox.Text.ToLower()))
+                ).ToList();
         }
 
 
@@ -149,7 +144,7 @@ public partial class CatalogWindow : Window
     {
         if (TovarsBox.SelectedItem is Tovar tovar)
         {
-            if (localUser != null)
+            if (Class1.isAdmin == true)
             {
                 var addedit = new AddEditTovar(localUser, tovar); 
                 addedit.Show();

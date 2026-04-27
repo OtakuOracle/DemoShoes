@@ -14,7 +14,7 @@ namespace DemoTest;
 public partial class AddEditTovar : Window
 {
     User localUser;
-    private Tovar _tovar;
+    private Tovar updatetovar;
     private string ImageName;
     private string _currentPhotoPath;
 
@@ -44,24 +44,24 @@ public partial class AddEditTovar : Window
     {
         InitializeComponent();
         using var context = new TrenirovkaContext();
-        _tovar = tovar;
+        updatetovar = tovar;
         localUser = user;
         LoadManu();
         LoadSup();
         LoadCat();
         LoadUnit(); 
         LoadTovarType();
-        DataContext = _tovar;
+        DataContext = updatetovar;
         TovarArtTextBox.IsVisible = true;
         EditBut.IsVisible = true;
         DeleteBut.IsVisible = true;
         AddBut.IsVisible = false;
-        ImageBox.Source = _tovar.GetPhoto;
-        var a = _tovar.ManufacturerId;
-        var b = _tovar.CategoryId;
-        var c = _tovar.SupplierId;
-        var d = _tovar.UnitId; 
-        var e = _tovar.TovarTypeId; 
+        ImageBox.Source = updatetovar.GetPhoto;
+        var a = updatetovar.ManufacturerId;
+        var b = updatetovar.CategoryId;
+        var c = updatetovar.SupplierId;
+        var d = updatetovar.UnitId; 
+        var e = updatetovar.TovarTypeId; 
 
         TovarType.SelectedItem = context.TovarTypes.Where(x => x.TovarTypeId == e).Select(x => x.TovarTypeName).FirstOrDefault();
         Supplier.SelectedItem = context.Suppliers.Where(x => x.SupplierId == c).Select(x => x.SupplierName).FirstOrDefault();
@@ -165,7 +165,7 @@ public partial class AddEditTovar : Window
         {
             var excep = ex.ToString();
             var error = MessageBoxManager.GetMessageBoxStandard("Ошибка", excep, MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Error);
-            error.ShowAsync();
+            await error.ShowAsync();
         }
     }
 
@@ -196,7 +196,7 @@ public partial class AddEditTovar : Window
     {
         using var context = new TrenirovkaContext();
 
-        var tovarId = _tovar.TovarArt;
+        var tovarId = updatetovar.TovarArt;
 
         var tovarToDelete = context.Tovars.Where(x => x.TovarArt == tovarId).FirstOrDefault();
 
@@ -218,8 +218,8 @@ public partial class AddEditTovar : Window
     private void LoadManu()
     {
         using var context = new TrenirovkaContext();
-        var man = context.Manufacturers.Select(x => x.ManufacturerName).ToList();
-        Manufacturer.ItemsSource = man;
+        //var man = context.Manufacturers.Select(x => x.ManufacturerName).ToList();
+        Manufacturer.ItemsSource = context.Manufacturers.Select(x => x.ManufacturerName).ToList();
     }
     private void LoadSup()
     {
@@ -268,29 +268,32 @@ public partial class AddEditTovar : Window
             var unitFin = context.Units.Where(x => x.UnitName == unit).Select(x => x.UnitId).FirstOrDefault();
             var tovartypeFin = context.TovarTypes.Where(x => x.TovarTypeName == tovartype).Select(x => x.TovarTypeId).FirstOrDefault();
 
-            _tovar.SupplierId = supFin;
-            _tovar.ManufacturerId = manFin;
-            _tovar.CategoryId = catFin;
-            _tovar.UnitId = unitFin;
-            _tovar.TovarTypeId = tovartypeFin;
+            updatetovar.SupplierId = supFin;
+            updatetovar.ManufacturerId = manFin;
+            updatetovar.CategoryId = catFin;
+            updatetovar.UnitId = unitFin;
+            updatetovar.TovarTypeId = tovartypeFin;
 
             if (!string.IsNullOrEmpty(ImageName))
             {
-                _tovar.Photo = "images/" + ImageName; 
+                updatetovar.Photo = "images/" + ImageName; 
             }
             else if (!string.IsNullOrEmpty(_currentPhotoPath))
             {
-                _tovar.Photo = _currentPhotoPath;
+                updatetovar.Photo = _currentPhotoPath;
             }
    
 
-            if (!ValidateProduct(_tovar))
+            if (!ValidateProduct(updatetovar))
             {
                 return;
             }
 
-            context.Tovars.Update(_tovar);
-            await context.SaveChangesAsync();
+
+            context.Tovars.Update(updatetovar);
+            context.SaveChanges();
+
+
 
             var nice = MessageBoxManager.GetMessageBoxStandard("Успех", "Товар изменен", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Success);
             await nice.ShowAsync();

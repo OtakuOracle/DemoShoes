@@ -9,8 +9,7 @@
 
 	<StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
 		 <Button Content="Изменить" Margin="5" Click="Edit_Click" IsVisible="False" Name="EditBut"></Button>
-		<TextBox x:Name="TovarArtTextBox" Margin="5" Width="200"
-         Text="{Binding TovarArt}" IsReadOnly="True"></TextBox>
+		<TextBox x:Name="TovarArtTextBox" Margin="5" Width="200" Text="{Binding TovarArt}" IsReadOnly="True"></TextBox>
 		<TextBox Margin="5" Watermark="Введите Описание" Width="200" Text="{Binding Description}"></TextBox>
 		<TextBox Margin="5" Watermark="Введите Цену" Width="200" Text="{Binding Price}"></TextBox>
 		<TextBox Margin="5" Watermark="Введите Скидку" Width="200" Text="{Binding Discount}"></TextBox>

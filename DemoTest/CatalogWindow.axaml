@@ -18,7 +18,7 @@
 			</ComboBox>
 			
 			<ComboBox Margin="5" Width="200" Name="Filter" IsVisible="False" SelectionChanged="Filter_SelectionChanged" FontFamily="Times New Roman"></ComboBox>
-			<TextBlock x:Name="FioTextBlock" Text="" FontFamily="Times New Roman"></TextBlock>
+			<TextBlock Name="FioTextBlock" Text="" FontFamily="Times New Roman"></TextBlock>
 			<Image Source="Icon/icon.png" Width="200" Height="200" HorizontalAlignment="Center" Margin="0,10"/>
 		</StackPanel>
 		
@@ -37,7 +37,7 @@
 			</ListBox.ItemsPanel>
 			<ListBox.ItemTemplate>
 				<DataTemplate>
-					<Border BorderBrush="Black" BorderThickness="1">
+					<Border BorderBrush="Black" BorderThickness="1" Background="{Binding ColorDiscount}">
 						<DockPanel>
 							<Border BorderBrush="Black" BorderThickness="1" Margin="5" DockPanel.Dock="Left">
 								<StackPanel  Orientation="Vertical" VerticalAlignment="Center">
@@ -47,7 +47,7 @@
 
 							<Border BorderBrush="Black" BorderThickness="1" Margin="5" DockPanel.Dock="Right">
 								<StackPanel  Orientation="Vertical" VerticalAlignment="Center">
-									<TextBlock Text="{Binding Discount}"  Background="{Binding ColorDiscount}"  FontFamily="Times New Roman"></TextBlock>
+									<TextBlock Text="{Binding Discount}"   FontFamily="Times New Roman"></TextBlock>
 								</StackPanel>
 							</Border>
 
