@@ -71,16 +71,18 @@ public partial class CatalogWindow : Window
 
         if (Filter.SelectedItem != null && Filter.SelectedIndex != 0)
         {
-            allProducts = allProducts.Where(x => x.Supplier.SupplierName == Filter.SelectedItem.ToString()).ToList();
+            allProducts = allProducts.Where(x => x.Supplier?.SupplierName == Filter.SelectedItem!.ToString()).ToList();
         }
 
 
-        if (SearchBox.Text != null )
+        if (!string.IsNullOrWhiteSpace(SearchBox.Text)) // Проверяем, что текст не пуст и не null
         {
-            allProducts = allProducts.Where(x => x.Description.ToLower().Contains(SearchBox.Text.ToLower()) ||
-                (x.Category.CategoryName.ToLower().Contains(SearchBox.Text.ToLower())) ||
-                (x.Manufacturer.ManufacturerName.ToLower().Contains(SearchBox.Text.ToLower())) ||
-                (x.Supplier.SupplierName.ToLower().Contains(SearchBox.Text.ToLower()))
+
+            allProducts = allProducts.Where(x => 
+                x.Description != null && x.Description.ToLower().Contains(SearchBox.Text.ToLower()) ||
+                x.Category != null && x.Category.CategoryName != null && x.Category.CategoryName.ToLower().Contains(SearchBox.Text.ToLower()) ||
+                x.Manufacturer != null && x.Manufacturer.ManufacturerName != null && x.Manufacturer.ManufacturerName.ToLower().Contains(SearchBox.Text.ToLower()) ||
+                x.Supplier != null && x.Supplier.SupplierName != null && x.Supplier.SupplierName.ToLower().Contains(SearchBox.Text.ToLower())
                 ).ToList();
         }
 

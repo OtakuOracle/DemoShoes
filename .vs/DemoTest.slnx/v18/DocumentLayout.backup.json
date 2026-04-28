@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\DemoShoes\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\addedittovar.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\addedittovar.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\addedittovar.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\addedittovar.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\models\\tovar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\models\\tovar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\catalogwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,6 +13,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\catalogwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\catalogwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\addedittovar.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\addedittovar.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\models\\tovar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|solutionrelative:demotest\\models\\tovar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{427C78A0-B5DB-7DB6-676F-445361959CFC}|DemoTest\\DemoTest.csproj|c:\\users\\admin\\desktop\\demoshoes\\demotest\\orderwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -134,8 +134,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 217,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 28,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 7,
@@ -186,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Tovar.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\Models\\Tovar.cs",
               "RelativeDocumentMoniker": "DemoTest\\Models\\Tovar.cs",
@@ -194,8 +198,7 @@
               "RelativeToolTip": "DemoTest\\Models\\Tovar.cs",
               "ViewState": "AgIAAEIAAAAAAAAAAAA0wFQAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T11:09:02.845Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-06T11:09:02.845Z"
             },
             {
               "$type": "Document",
@@ -211,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AddEditTovar.axaml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\AddEditTovar.axaml",
               "RelativeDocumentMoniker": "DemoTest\\AddEditTovar.axaml",
@@ -219,8 +222,7 @@
               "RelativeToolTip": "DemoTest\\AddEditTovar.axaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-30T15:47:10.123Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-30T15:47:10.123Z"
             },
             {
               "$type": "Document",
@@ -464,26 +466,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AddEditTovar.axaml.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\AddEditTovar.axaml.cs",
               "RelativeDocumentMoniker": "DemoTest\\AddEditTovar.axaml.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\AddEditTovar.axaml.cs",
               "RelativeToolTip": "DemoTest\\AddEditTovar.axaml.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAQwCcBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcBAAAAAAAAAAAmwBYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-27T14:42:36.685Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "CatalogWindow.axaml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\CatalogWindow.axaml",
               "RelativeDocumentMoniker": "DemoTest\\CatalogWindow.axaml",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\CatalogWindow.axaml",
               "RelativeToolTip": "DemoTest\\CatalogWindow.axaml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACcAAABZAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-03-27T14:40:13.324Z",
               "EditorCaption": ""
@@ -502,13 +504,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "CatalogWindow.axaml.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\CatalogWindow.axaml.cs",
               "RelativeDocumentMoniker": "DemoTest\\CatalogWindow.axaml.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\DemoShoes\\DemoTest\\CatalogWindow.axaml.cs",
               "RelativeToolTip": "DemoTest\\CatalogWindow.axaml.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAmwJYAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAwFwAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-27T14:25:16.74Z",
               "EditorCaption": ""
@@ -543,6 +545,10 @@
           "DockedWidth": 10,
           "SelectedChildIndex": -1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"

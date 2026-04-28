@@ -57,51 +57,30 @@ public partial class AddEditTovar : Window
         DeleteBut.IsVisible = true;
         AddBut.IsVisible = false;
         ImageBox.Source = updatetovar.GetPhoto;
-        var a = updatetovar.ManufacturerId;
-        var b = updatetovar.CategoryId;
-        var c = updatetovar.SupplierId;
-        var d = updatetovar.UnitId; 
-        var e = updatetovar.TovarTypeId; 
 
-        TovarType.SelectedItem = context.TovarTypes.Where(x => x.TovarTypeId == e).Select(x => x.TovarTypeName).FirstOrDefault();
-        Supplier.SelectedItem = context.Suppliers.Where(x => x.SupplierId == c).Select(x => x.SupplierName).FirstOrDefault();
-        Manufacturer.SelectedItem = context.Manufacturers.Where(x => x.ManufacturerId == a).Select(x => x.ManufacturerName).FirstOrDefault();
-        Category.SelectedItem = context.Categories.Where(x => x.CategoryId == b).Select(x => x.CategoryName).FirstOrDefault();
-        Unit.SelectedItem = context.Units.Where(x => x.UnitId == d).Select(x => x.UnitName).FirstOrDefault(); 
+        Manufacturer.SelectedItem = updatetovar?.Manufacturer?.ManufacturerName;
+        TovarType.SelectedItem = updatetovar?.TovarType?.TovarTypeName;
+        Supplier.SelectedItem = updatetovar?.Supplier?.SupplierName;
+        Category.SelectedItem = updatetovar?.Category?.CategoryName;
+        Unit.SelectedItem = updatetovar?.Unit?.UnitName;
     }
 
     private void Back_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var catalog = new CatalogWindow(localUser);
-        catalog.Show();
-        this.Close();
-    }
-    private bool ValidateProduct(Tovar t)
-    {
-        if (t.Price.HasValue && t.Price < 0)
+        if (Class1.isAdmin == true)
         {
-            var errorPrice = MessageBoxManager.GetMessageBoxStandard(
-                "Ошибка",
-                "Цена не должна быть отрицательной",
-                MsBox.Avalonia.Enums.ButtonEnum.Ok,
-                MsBox.Avalonia.Enums.Icon.Error);
-            errorPrice.ShowAsync();
-            return false;
+            var catalogWindow = new CatalogWindow(Class1._user);
+            catalogWindow.Show();
+            this.Close();
         }
-
-        if (t.Quantity.HasValue && t.Quantity < 0)
+        else
         {
-            var errorQty = MessageBoxManager.GetMessageBoxStandard(
-                "Ошибка",
-                "Количество не должно быть отрицательным",
-                MsBox.Avalonia.Enums.ButtonEnum.Ok,
-                MsBox.Avalonia.Enums.Icon.Error);
-            errorQty.ShowAsync();
-            return false;
+            var catalogWindow = new CatalogWindow();
+            catalogWindow.Show();
+            this.Close();
         }
-
-        return true;
     }
+
     private async void Add_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         try
@@ -109,32 +88,32 @@ public partial class AddEditTovar : Window
             using var context = new TrenirovkaContext();
             var newTovar = DataContext as Tovar;
 
-            if (!ValidateProduct(newTovar))
+            if (newTovar?.Price < 0)
             {
+                var error = MessageBoxManager.GetMessageBoxStandard("Ошибка", "Цена не может быть отрицательной", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Error);
+                await error.ShowAsync();
                 return;
             }
 
+            if (newTovar?.Quantity < 0)
+            {
+                var error = MessageBoxManager.GetMessageBoxStandard("Ошибка", "Количество не может быть отрицательной", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Error);
+                await error.ShowAsync();
+                return;
+            }
+
+
+
             if (Manufacturer.SelectedItem != null && Supplier.SelectedItem != null && Category.SelectedItem != null && Unit.SelectedItem != null && TovarType.SelectedItem != null)
             {
-                var man = Manufacturer.SelectedItem.ToString();
-                var pro = Supplier.SelectedItem.ToString();
-                var cat = Category.SelectedItem.ToString();
-                var unit = Unit.SelectedItem.ToString();
-                var tovartype = TovarType.SelectedItem.ToString();
-
-                var manFin = context.Manufacturers.Where(x => x.ManufacturerName == man).Select(x => x.ManufacturerId).FirstOrDefault();
-                var proFin = context.Suppliers.Where(x => x.SupplierName == pro).Select(x => x.SupplierId).FirstOrDefault();
-                var catFin = context.Categories.Where(x => x.CategoryName == cat).Select(x => x.CategoryId).FirstOrDefault();
-                var unitFin = context.Units.Where(x => x.UnitName == unit).Select(x => x.UnitId).FirstOrDefault();
-                var tovartypeFin = context.TovarTypes.Where(x => x.TovarTypeName == tovartype).Select(x => x.TovarTypeId).FirstOrDefault();
-
+                newTovar.Manufacturer = context.Manufacturers.FirstOrDefault(x => x.ManufacturerName == Manufacturer.SelectedItem!.ToString())!;
+                newTovar.Supplier = context.Suppliers.FirstOrDefault(x => x.SupplierName == Supplier.SelectedItem!.ToString())!;
+                newTovar.Category = context.Categories.FirstOrDefault(x => x.CategoryName == Category.SelectedItem!.ToString())!;
+                newTovar.Unit = context.Units.FirstOrDefault(x => x.UnitName == Unit.SelectedItem!.ToString())!;
+                newTovar.TovarType = context.TovarTypes.FirstOrDefault(x => x.TovarTypeName == TovarType.SelectedItem!.ToString())!;
                 newTovar.TovarArt = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 6).Select(s => s[new Random().Next(s.Length)]).ToArray());
-                newTovar.SupplierId = proFin;
-                newTovar.ManufacturerId = manFin;
-                newTovar.CategoryId = catFin;
-                newTovar.UnitId = unitFin;
                 newTovar.Photo = "images/" + ImageName;
-                newTovar.TovarTypeId = tovartypeFin;
+
 
                 context.Tovars.Add(newTovar);
                 await context.SaveChangesAsync();
@@ -200,32 +179,37 @@ public partial class AddEditTovar : Window
 
         var tovarToDelete = context.Tovars.Where(x => x.TovarArt == tovarId).FirstOrDefault();
 
-        if (tovarToDelete != null)
+        context.Tovars.Remove(tovarToDelete!);
+        context.SaveChanges();
+
+        var message = MessageBoxManager.GetMessageBoxStandard("Успех", "Товар удален", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Success);
+        await message.ShowAsync();
+
+        if (Class1.isAdmin == true)
         {
-            context.Remove(tovarToDelete);
-            context.SaveChanges();
+            var catalogWindow = new CatalogWindow(Class1._user);
+            catalogWindow.Show();
+            this.Close();
         }
-
-        var nice = MessageBoxManager.GetMessageBoxStandard("Успех", "Товар удален", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Success);
-        await nice.ShowAsync();
-
-        var catalog = new CatalogWindow();
-        catalog.Show();
-        this.Close();
+        else
+        {
+            var catalogWindow = new CatalogWindow();
+            catalogWindow.Show();
+            this.Close();
+        }
     }
 
 
     private void LoadManu()
     {
         using var context = new TrenirovkaContext();
-        //var man = context.Manufacturers.Select(x => x.ManufacturerName).ToList();
         Manufacturer.ItemsSource = context.Manufacturers.Select(x => x.ManufacturerName).ToList();
     }
     private void LoadSup()
     {
         using var context = new TrenirovkaContext();
-        var sup = context.Suppliers.Select(x => x.SupplierName).ToList();
-        Supplier.ItemsSource = sup;
+        Supplier.ItemsSource = context.Suppliers.Select(x => x.SupplierName).ToList();
+
     }
     private void LoadCat()
     {
@@ -253,39 +237,37 @@ public partial class AddEditTovar : Window
     private async void Edit_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         using var context = new TrenirovkaContext();
+        var updatetovar = DataContext as Tovar;
 
         try
         {
-            var man = Manufacturer.SelectedItem.ToString();
-            var pro = Supplier.SelectedItem.ToString();
-            var cat = Category.SelectedItem.ToString();
-            var unit = Unit.SelectedItem.ToString();
-            var tovartype = TovarType.SelectedItem.ToString();
 
-            var manFin = context.Manufacturers.Where(x => x.ManufacturerName == man).Select(x => x.ManufacturerId).FirstOrDefault();
-            var supFin = context.Suppliers.Where(x => x.SupplierName == pro).Select(x => x.SupplierId).FirstOrDefault();
-            var catFin = context.Categories.Where(x => x.CategoryName == cat).Select(x => x.CategoryId).FirstOrDefault();
-            var unitFin = context.Units.Where(x => x.UnitName == unit).Select(x => x.UnitId).FirstOrDefault();
-            var tovartypeFin = context.TovarTypes.Where(x => x.TovarTypeName == tovartype).Select(x => x.TovarTypeId).FirstOrDefault();
-
-            updatetovar.SupplierId = supFin;
-            updatetovar.ManufacturerId = manFin;
-            updatetovar.CategoryId = catFin;
-            updatetovar.UnitId = unitFin;
-            updatetovar.TovarTypeId = tovartypeFin;
+            updatetovar?.Manufacturer = context.Manufacturers.FirstOrDefault(x => x.ManufacturerName == Manufacturer.SelectedItem!.ToString())!;
+            updatetovar?.Supplier = context.Suppliers.FirstOrDefault(x => x.SupplierName == Supplier.SelectedItem!.ToString())!;
+            updatetovar?.Category = context.Categories.FirstOrDefault(x => x.CategoryName == Category.SelectedItem!.ToString())!;
+            updatetovar?.Unit = context.Units.FirstOrDefault(x => x.UnitName == Unit.SelectedItem!.ToString())!;
+            updatetovar?.TovarType = context.TovarTypes.FirstOrDefault(x => x.TovarTypeName == TovarType.SelectedItem!.ToString())!;
 
             if (!string.IsNullOrEmpty(ImageName))
             {
-                updatetovar.Photo = "images/" + ImageName; 
+                updatetovar?.Photo = "images/" + ImageName; 
             }
             else if (!string.IsNullOrEmpty(_currentPhotoPath))
             {
-                updatetovar.Photo = _currentPhotoPath;
+                updatetovar?.Photo = _currentPhotoPath;
             }
-   
 
-            if (!ValidateProduct(updatetovar))
+            if (updatetovar?.Price < 0)
             {
+                var error = MessageBoxManager.GetMessageBoxStandard("Ошибка", "Цена не может быть отрицательной", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Error);
+                await error.ShowAsync();
+                return;
+            }
+
+            if (updatetovar?.Quantity < 0)
+            {
+                var error = MessageBoxManager.GetMessageBoxStandard("Ошибка", "Количество не может быть отрицательной", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Error);
+                await error.ShowAsync();
                 return;
             }
 
@@ -295,8 +277,8 @@ public partial class AddEditTovar : Window
 
 
 
-            var nice = MessageBoxManager.GetMessageBoxStandard("Успех", "Товар изменен", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Success);
-            await nice.ShowAsync();
+            var message = MessageBoxManager.GetMessageBoxStandard("Успех", "Товар изменен", MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Success);
+            await message.ShowAsync();
 
             if (Class1.isAdmin == true)
             {
@@ -316,7 +298,7 @@ public partial class AddEditTovar : Window
         {
             var exec = ex.ToString();
             var error = MessageBoxManager.GetMessageBoxStandard("Ошибка", exec, MsBox.Avalonia.Enums.ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Error);
-            error.ShowAsync();
+            await error.ShowAsync();
         }
 
     }
