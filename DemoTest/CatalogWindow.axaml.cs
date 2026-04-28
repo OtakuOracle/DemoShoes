@@ -79,7 +79,7 @@ public partial class CatalogWindow : Window
         {
 
             allProducts = allProducts.Where(x => 
-                x.Description != null && x.Description.ToLower().Contains(SearchBox.Text.ToLower()) ||
+                x.Description!.ToLower().Contains(SearchBox.Text.ToLower()) ||
                 x.Category != null && x.Category.CategoryName != null && x.Category.CategoryName.ToLower().Contains(SearchBox.Text.ToLower()) ||
                 x.Manufacturer != null && x.Manufacturer.ManufacturerName != null && x.Manufacturer.ManufacturerName.ToLower().Contains(SearchBox.Text.ToLower()) ||
                 x.Supplier != null && x.Supplier.SupplierName != null && x.Supplier.SupplierName.ToLower().Contains(SearchBox.Text.ToLower())

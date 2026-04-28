@@ -103,7 +103,6 @@ public partial class AddEditTovar : Window
             }
 
 
-
             if (Manufacturer.SelectedItem != null && Supplier.SelectedItem != null && Category.SelectedItem != null && Unit.SelectedItem != null && TovarType.SelectedItem != null)
             {
                 newTovar.Manufacturer = context.Manufacturers.FirstOrDefault(x => x.ManufacturerName == Manufacturer.SelectedItem!.ToString())!;
