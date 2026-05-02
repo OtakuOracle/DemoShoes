@@ -30,11 +30,6 @@
 
 
 	<ListBox Name="TovarsBox" SelectionChanged="TovarsBox_SelectionChanged">
-			<ListBox.ItemsPanel>
-				<ItemsPanelTemplate>
-					<UniformGrid Columns="1"></UniformGrid>
-				</ItemsPanelTemplate>
-			</ListBox.ItemsPanel>
 			<ListBox.ItemTemplate>
 				<DataTemplate>
 					<Border BorderBrush="Black" BorderThickness="1" Background="{Binding ColorDiscount}">

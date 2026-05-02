@@ -6,6 +6,7 @@
         x:Class="DemoTest.MainWindow"
         Title="Авторизация"
 		Icon="Icon/icon.png">
+	
 	<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
 		<TextBox Margin="5" Name="LoginTextBox" Width="200"  FontFamily="Times New Roman"  Watermark="Введите логин"></TextBox>
 		<TextBox Margin="5" Name="PasswordTextBox" Width="200"  FontFamily="Times New Roman" Watermark="Введите пароль"></TextBox>
